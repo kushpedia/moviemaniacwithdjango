@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'categoryApp.apps.CategoryappConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Kushpedia_E_Shop.wsgi.application'
+AUTH_USER_MODEL = 'accounts.Account'
+
 
 
 # Database
