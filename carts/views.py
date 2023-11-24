@@ -11,6 +11,10 @@ def _cart_id(request):
     return cart
 
 def add_cart(request,product_id):
+    color = request.POST['color']
+    size = request.POST['size']
+    print (color,size)
+
     product = Product.objects.get(id=product_id)
     try:
         cart = Cart.objects.get(cart_id=_cart_id(request))
@@ -53,11 +57,6 @@ def remove_cart_item(request, product_id):
     cart_item = CartItem.objects.get(product = product, cart = cart)
     cart_item.delete()
     return redirect('cart')
-
-
-
-
-
 
 
 def cart(request, total=0, quantity=0, cart_items=None):
