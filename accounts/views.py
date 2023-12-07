@@ -14,8 +14,6 @@ from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 
 
-
-
 # Create your views here.
 def register(request):
     if request.method == 'POST':
@@ -97,7 +95,7 @@ def forgotPassword(request):
     if request.method == 'POST':
         email=request.POST['email']
         if Account.objects.filter(email=email).exists():
-            user = Account.objects.get(email_exact =email)
+            user = Account.objects.get(email__exact = email)
             current_site = get_current_site(request)
             mail_subject = 'Password Reset'
             message = render_to_string('accounts/reset_password_email.html',{
