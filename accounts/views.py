@@ -107,10 +107,10 @@ def forgotPassword(request):
             to_email = email
             send_email = EmailMessage(mail_subject, message, to=[to_email])
             send_email.send()
-            messages.success('Password reset link has been sent to your email')
+            messages.success(request, 'Password reset link has been sent to your email')
             return redirect('login')
         else:
-            messages.error("Account Does not exist")
+            messages.error(request, "Account Does not exist")
             return redirect('forgotPassword')
 
     return render(request, 'accounts/forgotPassword.html')
