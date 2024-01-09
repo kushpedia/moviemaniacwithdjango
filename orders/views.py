@@ -150,7 +150,7 @@ def order_complete(request):
             'subtotal' : subtotal,
         }
         return render(request, 'orders/order_complete.html',context)
-    except(order.DoesNotExist, ordered_products.DoesNotExist):
+    except(Payment.DoesNotExist, Order.DoesNotExist):
 
         return redirect('home')
 
