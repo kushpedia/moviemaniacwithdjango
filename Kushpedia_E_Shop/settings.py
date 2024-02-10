@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'store.apps.StoreConfig',
     'carts.apps.CartsConfig',
     'orders.apps.OrdersConfig',
+    'movies.apps.MoviesConfig'
     # 'admin_honeypot',
 ]
 
